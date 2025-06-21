@@ -24,14 +24,12 @@ COPY --from=builder /build/application/target/conf /usr/share/thingsboard/conf
 
 # Добавляем thingsboard.sh через heredoc
 RUN mkdir -p /usr/share/thingsboard/bin && \
-    cat << 'EOF' > /usr/share/thingsboard/bin/thingsboard.sh
-#!/bin/bash
-set -e
-
-export JAVA_OPTS="${JAVA_OPTS:--Xms256M -Xmx1024M}"
-
-exec java $JAVA_OPTS -jar /usr/share/thingsboard/thingsboard.jar
-EOF
+    echo '#!/bin/bash\n\
+set -e\n\
+export JAVA_OPTS="${JAVA_OPTS:--Xms256M -Xmx1024M}"\n\
+exec java $JAVA_OPTS -jar /usr/share/thingsboard/thingsboard.jar' \
+    > /usr/share/thingsboard/bin/thingsboard.sh && \
+    chmod +x /usr/share/thingsboard/bin/thingsboard.sh
 
 
 RUN chmod +x /usr/share/thingsboard/bin/thingsboard.sh
