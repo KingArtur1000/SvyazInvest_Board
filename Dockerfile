@@ -30,8 +30,9 @@ set -e
 
 export JAVA_OPTS="${JAVA_OPTS:--Xms256M -Xmx1024M}"
 
-exec java \$JAVA_OPTS -jar /usr/share/thingsboard/thingsboard.jar
+exec java $JAVA_OPTS -jar /usr/share/thingsboard/thingsboard.jar
 EOF
+
 
 RUN chmod +x /usr/share/thingsboard/bin/thingsboard.sh
 
