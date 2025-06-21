@@ -22,7 +22,7 @@ COPY --from=builder /build/application/target/thingsboard-*.jar /usr/share/thing
 #COPY --from=builder /build/application/target/bin /usr/share/thingsboard/bin
 COPY --from=builder /build/application/target/conf /usr/share/thingsboard/conf
 
-# Добавляем thingsboard.sh через heredoc
+# Создаём thingsboard.sh 
 RUN mkdir -p /usr/share/thingsboard/bin && \
     echo '#!/bin/bash\n\
 set -e\n\
