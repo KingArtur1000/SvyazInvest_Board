@@ -623,17 +623,17 @@ export const menuSectionMap = new Map<MenuId, MenuSection>([
       icon: 'router'
     }
   ],
-  [
-    MenuId.edge_instances,
-    {
-      id: MenuId.edge_instances,
-      name: 'edge.edge-instances',
-      fullName: 'edge.edge-instances',
-      type: 'link',
-      path: '/edgeManagement/instances',
-      icon: 'router'
-    }
-  ],
+  //[
+  //  MenuId.edge_instances,
+  //  {
+  //    id: MenuId.edge_instances,
+  //    name: 'edge.edge-instances',
+  //    fullName: 'edge.edge-instances',
+  //    type: 'link',
+  //    path: '/edgeManagement/instances',
+  //    icon: 'router'
+  //  }
+  //],
   [
     MenuId.rulechain_templates,
     {
